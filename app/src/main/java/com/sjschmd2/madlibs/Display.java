@@ -30,7 +30,8 @@ public class Display extends Activity {
     }
 
     private void init(){
-        text1 = new ArrayList<String>(Arrays.asList("Dirty Martinis are a good cocktail while you are on a date. Who can ",
+        text1 = new ArrayList<String>(Arrays.asList(
+                "Dirty Martinis are a good cocktail while you are on a date. Who can ",
                 " a dirty martini? first, get a martini ",
                 ". Add ",
                 " or ",
@@ -41,9 +42,31 @@ public class Display extends Activity {
                 ". Now ",
                 ". You can also go to a ",
                 " and get one already made. Many celebrities like this drink including "
-                ));
-        text2 = null;
-        text3 = null;
+                )
+        );
+        text2 = new ArrayList<String>(Arrays.asList(
+                "It was during the battle of ",
+                " when I was running through a ",
+                " when a ",
+                " went off right next to my platoon. Our ",
+                " yelled for us to  ",
+                " to the nearest ",
+                " we could find. When we got to the",
+                " "
+            )
+        );
+        text3 = new ArrayList<String>(Arrays.asList(
+                "As a male nursing professor at the local community college, I get my share of ",
+                " young students. I try to keep my mind on my job, but it's not always easy. For example, the other day after class, ",
+                ", a blonde with very large ",
+                ", stayed to get help with her homework. As she leaned over my desk, I could see she wasn't wearing a ",
+                ". \"Anatomy is so hard,\" she said, putting her hand on my ",
+                " \"isn't there anything I could do to get some extra credit?\" Despite my best efforts, I could feel myself becoming ",
+                ". \"Maybe I can do a lab report about how far I can fit a man's ",
+                " into my ",
+                "\" she asked."
+            )
+        );
         Bundle b = getIntent().getExtras();
         if(b==null)
             return;

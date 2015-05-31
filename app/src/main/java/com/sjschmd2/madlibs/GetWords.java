@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,7 +24,7 @@ public class GetWords extends Activity{
     ArrayList<String> words,words1,words2,words3, inputs;
     Button b;
     EditText et;
-    TextView tv;
+    TextView tv, tv2;
     int index = 0;
     char encodedChar;
 
@@ -52,6 +54,7 @@ public class GetWords extends Activity{
                 inputs.add(input);
                 if(index==words.size()) {
                     b.setText("Click to see your madlib!");
+                    tv2.setText("Done!");
                     et.setHint("You are done!");
                     et.setEnabled(false);
                     index = Integer.MAX_VALUE;
@@ -60,6 +63,7 @@ public class GetWords extends Activity{
                     b.setText(words.get(index));
                     et.setText("");
                     et.setHint("Enter appropiate text here and press the button below to submit.");
+                    tv2.setText(index + 1 + "/" + words.size());
                 }
             }
 
@@ -67,10 +71,10 @@ public class GetWords extends Activity{
     }
 
     private void init(){
-        words1 = new ArrayList<String>(Arrays.asList("VERB", "NOUN", "NAME OF DRINK", "FAMOUS PERSON", "ANIMAL(PLURAL)", "NAME OF NUT", "NOUN", "VERB ENDING IN -ED", "VERB", "PLACE", "FAMOUS PERSON", "PHRASE"));
         inputs = new ArrayList<String>();
-        words2 = new ArrayList<String>(Arrays.asList("IT WORKS","OR NAH"));
-        words3 = new ArrayList<String>(Arrays.asList("I CUNM BLOOD","OR NAH"));
+        words1 = new ArrayList<String>(Arrays.asList("VERB", "NOUN", "NAME OF DRINK", "FAMOUS PERSON", "ANIMAL(PLURAL)", "NAME OF NUT", "NOUN", "VERB ENDING IN -ED", "VERB", "PLACE", "FAMOUS PERSON", "PHRASE"));
+        words2 = new ArrayList<String>(Arrays.asList("NOUN","NOUN","NOUN","OCCUPATION","VERB","PLACE","VERB ENDING IN -ED","NOUN","VERB ENDING IN -ING","NOUN(PLURAL)","NOUN","PLACE","EMOTION"));
+        words3 = new ArrayList<String>(Arrays.asList("ADJECTIVE","FEMALE NAME","NOUN(PLURAL)","PIECE OF CLOTHING","NOUN","ADJECTIVE","BODY PART","BODY PART"));
         b = (Button) findViewById(R.id.bGetWords);
         et = (EditText) findViewById(R.id.etGetWords);
         tv = (TextView) findViewById(R.id.tvGetWords);
@@ -81,6 +85,8 @@ public class GetWords extends Activity{
             b.setText(words.get(0));
         else
             b.setText("ERROR");
+        tv2 = (TextView) findViewById(R.id.progress);
+        tv2.setText(index+1+"/"+words.size());
     }
 
     private ArrayList<String> pickList(){
