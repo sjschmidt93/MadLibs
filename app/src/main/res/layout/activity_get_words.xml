@@ -14,7 +14,7 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:id="@+id/etGetWords"
         android:layout_weight="0.13"
         android:hint="Enter appropiate text here and press the button below to submit." />

@@ -37,6 +37,7 @@ public class MainActivity extends Activity {
 
     public void onClick(View v) {
         char encodedChar = '0';
+        boolean loading = false;
         switch(v.getId()) {
             case R.id.b1:
                 encodedChar = '1';
@@ -47,10 +48,18 @@ public class MainActivity extends Activity {
             case R.id.b3:
                 encodedChar = '3';
                 break;
+            case R.id.b4:
+                loading = true;
+                Intent i = new Intent(this,Load.class);
+                startActivity(i);
+                break;
         }
-        Intent i = new Intent(this,GetWords.class);
-        i.putExtra("char",encodedChar);
-        startActivity(i);
+        if(!loading){
+            Intent i = new Intent(this,GetWords.class);
+            i.putExtra("char",encodedChar);
+            startActivity(i);
+        }
+
     }
 
 

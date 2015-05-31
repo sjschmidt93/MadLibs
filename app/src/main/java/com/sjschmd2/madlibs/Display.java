@@ -18,9 +18,11 @@ import java.util.Arrays;
 public class Display extends Activity {
 
     TextView tv;
-    Button b;
+    Button save;
     ArrayList<String> text, text1, text2, text3, inputs;
+    String story = "";
     char encodedChar;
+    boolean loading = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,15 +69,23 @@ public class Display extends Activity {
                 "\" she asked."
             )
         );
+        save = (Button) findViewById(R.id.save);
         Bundle b = getIntent().getExtras();
+        tv = (TextView) findViewById(R.id.story);
         if(b==null)
             return;
-        inputs = b.getStringArrayList("words");
-        encodedChar = b.getChar("char");
-        text = pickText();
-        String story = getStory();
-        tv = (TextView) findViewById(R.id.story);
-        tv.setText(story);
+        if(getIntent().hasExtra("char")) {
+            inputs = b.getStringArrayList("words");
+            encodedChar = b.getChar("char");
+            text = pickText();
+            story = getStory();
+            tv.setText(story);
+        }
+        if(getIntent().hasExtra("load")){
+            loading = true;
+            String loadedStory = getIntent().getExtras().getString("load");
+            tv.setText(loadedStory);
+        }
     }
 
     private String getStory(){
@@ -107,13 +117,25 @@ public class Display extends Activity {
     public void onClick(View v){
         switch(v.getId()){
             case R.id.back:
-                Intent i = new Intent(this,MainActivity.class);
-                startActivity(i);
+                Intent back = new Intent(this,MainActivity.class);
+                startActivity(back);
                 break;
             case R.id.save:
-
-                break;
+                if(loading)
+                    save.setText("This Madlib is already saved!");
+                else {
+                    Intent save = new Intent(this, Save.class);
+                    save.putExtra("story", story);
+                    startActivity(save);
+                    break;
+                }
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
     }
 
     @Override

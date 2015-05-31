@@ -18,15 +18,15 @@
         android:text="Martinis"
         android:id="@+id/b1"
         android:layout_gravity="center_vertical"
-        android:layout_weight="33"
+        android:layout_weight="25"
         android:onClick="onClick"/>
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="War"
         android:id="@+id/b2"
-        android:layout_weight="33"
+        android:layout_weight="25"
         android:onClick="onClick"
          />
 
@@ -36,8 +36,17 @@
         android:text="After School Special"
         android:id="@+id/b3"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="33"
+        android:layout_weight="25"
         android:onClick="onClick"
          />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Load a Saved Madlib"
+        android:id="@+id/b4"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="25"
+        android:onClick="onClick"/>
 
 </LinearLayout>

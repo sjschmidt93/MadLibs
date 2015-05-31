@@ -20,12 +20,20 @@
             android:name=".GetWords"
             android:label="@string/title_activity_get_words" >
             <intent-filter>
-                <action android:name="com.sjschmd2.madlibs.GETWORDS"/>
+                <action android:name="com.sjschmd2.madlibs.GETWORDS" />
             </intent-filter>
         </activity>
         <activity
             android:name=".Display"
             android:label="@string/title_activity_display" >
+        </activity>
+        <activity
+            android:name=".Save"
+            android:label="@string/title_activity_save" >
+        </activity>
+        <activity
+            android:name=".Load"
+            android:label="@string/title_activity_load" >
         </activity>
     </application>
 
