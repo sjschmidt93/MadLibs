@@ -19,7 +19,9 @@
         android:id="@+id/b1"
         android:layout_gravity="center_vertical"
         android:layout_weight="25"
-        android:onClick="onClick"/>
+        android:onClick="onClick"
+        android:background="#ff12ff00"
+        android:textColor="#ff000000" />
 
     <Button
         android:layout_width="fill_parent"
@@ -28,7 +30,9 @@
         android:id="@+id/b2"
         android:layout_weight="25"
         android:onClick="onClick"
-         />
+        android:background="#ffffff00"
+        android:padding="10dp"
+        android:textColor="#ff000000" />
 
     <Button
         android:layout_width="fill_parent"
@@ -38,7 +42,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_weight="25"
         android:onClick="onClick"
-         />
+        android:textColor="#ff000000"
+        android:background="#ff00ffff" />
 
     <Button
         android:layout_width="fill_parent"
@@ -47,6 +52,8 @@
         android:id="@+id/b4"
         android:layout_gravity="center_horizontal"
         android:layout_weight="25"
-        android:onClick="onClick"/>
+        android:onClick="onClick"
+        android:textColor="#ff000000"
+        android:background="#ffff00ff" />
 
 </LinearLayout>

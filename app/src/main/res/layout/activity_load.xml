@@ -43,4 +43,15 @@
         android:layout_below="@+id/load_button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="103dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/load_error_text"
+        android:layout_below="@+id/load_button"
+        android:layout_marginTop="45dp"
+        android:layout_alignLeft="@+id/tv_load"
+        android:layout_alignStart="@+id/tv_load"
+        android:layout_alignRight="@+id/tv_load"
+        android:layout_alignEnd="@+id/tv_load" />
 </RelativeLayout>

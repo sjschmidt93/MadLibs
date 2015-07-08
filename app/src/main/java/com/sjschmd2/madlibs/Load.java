@@ -2,6 +2,7 @@ package com.sjschmd2.madlibs;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,7 +17,7 @@ public class Load extends ActionBarActivity {
 
     Button b;
     EditText et;
-    TextView tv;
+    TextView tv, tv2;
     SharedPreferences data;
     final String FILENAME = "MY_FILENAME";
 
@@ -27,6 +28,7 @@ public class Load extends ActionBarActivity {
         b = (Button) findViewById(R.id.load_button);
         et = (EditText) findViewById(R.id.load_name);
         tv = (TextView) findViewById(R.id.load_error);
+        tv2 = (TextView) findViewById(R.id.load_error_text);
         data = getSharedPreferences(FILENAME,0);
     }
 
@@ -36,6 +38,10 @@ public class Load extends ActionBarActivity {
             Intent i = new Intent(this,Display.class);
             i.putExtra("load",val);
             startActivity(i);
+        }
+        else {
+            tv2.setTextColor(Color.RED);
+            tv2.setText("ERROR: Could not load madlib.");
         }
     }
 

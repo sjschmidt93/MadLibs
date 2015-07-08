@@ -48,7 +48,8 @@ public class GetWords extends Activity{
             String input = et.getText().toString();
             if (input.equals("")) {
                 tv.setText("ERROR: Field is empty.");
-            } else {
+            }
+            else {
                 tv.setText("");
                 index++;
                 inputs.add(input);

@@ -1,5 +1,7 @@
 package com.sjschmd2.madlibs;
 
+import android.app.AlertDialog;
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
@@ -47,7 +49,10 @@ public class Save extends ActionBarActivity {
                 SharedPreferences.Editor editor = data.edit();
                 editor.putString(et.getText().toString(), toSave);
                 editor.commit();
-                b.setText("Madlib saved! Click to return to main menu");
+                new AlertDialog.Builder(this)
+                        .setTitle("Success")
+                        .setMessage("Your madlib was saved!")
+                        .show();
                 back = true;
             }
         }
